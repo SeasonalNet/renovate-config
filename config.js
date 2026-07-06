@@ -37,8 +37,8 @@ module.exports = {
   automerge: false,
   platformAutomerge: false,
 
-  prHourlyLimit: 2,
-  prConcurrentLimit: 5,
+  prHourlyLimit: 1,
+  prConcurrentLimit: 2,
 
   semanticCommits: "enabled",
   semanticCommitType: "chore",
@@ -49,8 +49,10 @@ module.exports = {
 
   packageRules: [
     {
-      matchUpdateTypes: ["major"],
-      addLabels: ["major"],
+     description: "Hold major updates during Renovate bring-up",
+     matchUpdateTypes: ["major"],
+     dependencyDashboardApproval: true,
+     addLabels: ["major", "needs-approval"],
     },
     {
       matchUpdateTypes: ["minor"],

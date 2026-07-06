@@ -16,6 +16,12 @@ module.exports = {
   repositories: [
     "SeasonalNet/seasonalnet-docs",
     "SeasonalNet/seasonalnet-ddns",
+    "SeasonalNet/seasonal-apid",
+    "SeasonalNet/seasonal-sandboxd",
+    "SeasonalNet/seasonal-backupd",
+    "SeasonalNet/seasonal-astrocomd",
+    "SeasonalNet/seasonal-capd",
+    "SeasonalNet/seasonalnet-discord-bot",
   ],
 
   onboarding: false,

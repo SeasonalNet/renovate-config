@@ -5,6 +5,14 @@ module.exports = {
 
   gitAuthor: "renovate-bot <renovate-bot@seasonalnet.org>",
 
+  enabledManagers: [
+    "npm",
+    "pip_requirements",
+    "pep621",
+    "dockerfile",
+    "docker-compose",
+  ],
+
   repositories: [
     "SeasonalNet/seasonalnet-docs",
     "SeasonalNet/seasonalnet-ddns",

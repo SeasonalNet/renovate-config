@@ -1,0 +1,33 @@
+# Node.js dependencies & lockfiles
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Local environment variables
+.env
+.env.local
+
+# IDE and Editor files
+.vscode/
+.idea/
+.DS_Store
+
+# Renovate local state and runtime artifacts
+.cache/
+renovate-log.json
+debug.log
+containerbase/
+
+# OS-specific files
+Thumbs.db
+
+# Renovates stuff
+
+!.env.example
+renovate-cache/
+*.log

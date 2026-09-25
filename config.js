@@ -50,8 +50,7 @@ module.exports = {
       description: "Wait for npm releases to clear pnpm's release-age checks",
       matchManagers: ["npm"],
       matchDatasources: ["npm"],
-      minimumReleaseAge: "1 day",
-      minimumReleaseAgeBuffer: "1 day",
+      minimumReleaseAge: "2 days",
       minimumReleaseAgeBehaviour: "timestamp-required",
     },
     {
@@ -62,7 +61,7 @@ module.exports = {
       enabled: false,
     },
     {
-     description: "Hold major updates during Renovate bring-up",
+     description: "Do not automatically do major version bumps",
      matchUpdateTypes: ["major"],
      dependencyDashboardApproval: true,
      addLabels: ["major", "needs-approval"],

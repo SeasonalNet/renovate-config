@@ -11,7 +11,10 @@ module.exports = {
     "pep621",
     "dockerfile",
     "docker-compose",
+    "github-actions",
   ],
+
+  extends: ["helpers:pinGitHubActionDigests"],
 
   autodiscover: true,
   autodiscoverNamespaces: ["SeasonalNet"],
@@ -22,6 +25,7 @@ module.exports = {
 
   dependencyDashboard: true,
   dependencyDashboardTitle: "Renovate Dependency Dashboard",
+  osvVulnerabilityAlerts: true,
 
   branchPrefix: "renovate/",
   labels: ["dependencies"],
@@ -32,6 +36,7 @@ module.exports = {
 
   prHourlyLimit: 1,
   prConcurrentLimit: 2,
+  internalChecksFilter: "strict",
 
   semanticCommits: "enabled",
   semanticCommitType: "chore",
@@ -41,6 +46,21 @@ module.exports = {
   timezone: "America/New_York",
 
   packageRules: [
+    {
+      description: "Wait for npm releases to clear pnpm's release-age checks",
+      matchManagers: ["npm"],
+      matchDatasources: ["npm"],
+      minimumReleaseAge: "1 day",
+      minimumReleaseAgeBuffer: "1 day",
+      minimumReleaseAgeBehaviour: "timestamp-required",
+    },
+    {
+      description: "Keep pinned pnpm package-manager versions under repository control",
+      matchManagers: ["npm"],
+      matchDepTypes: ["packageManager"],
+      matchDepNames: ["pnpm"],
+      enabled: false,
+    },
     {
      description: "Hold major updates during Renovate bring-up",
      matchUpdateTypes: ["major"],

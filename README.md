@@ -9,7 +9,8 @@ This repository stores the bot-side Renovate configuration used to create depend
 - Bot account: `renovate-bot`
 - Forgejo platform: `https://git.seasonalnet.org`
 - Target organization: `SeasonalNet`
-- Initial mode: explicit repository list
+- Repository selection: autodiscover repositories in `SeasonalNet`, excluding
+  this configuration repository
 - Automerge: disabled (for now)
 - Package/release/deploy permissions: not granted
 
@@ -29,3 +30,7 @@ The bot token needs:
 - read/write user read, and organization read permissions.
 
 Add package read permission if Renovate needs to inspect Forgejo packages.
+
+Renovate discovers repositories in the `SeasonalNet` organization when the bot
+has pull and push access and pull requests are enabled. The filter excludes
+`SeasonalNet/renovate-config` so the bot does not update its own configuration.

@@ -13,16 +13,9 @@ module.exports = {
     "docker-compose",
   ],
 
-  repositories: [
-    "SeasonalNet/seasonalnet-docs",
-    "SeasonalNet/seasonalnet-ddns",
-    "SeasonalNet/seasonal-apid",
-    "SeasonalNet/seasonal-sandboxd",
-    "SeasonalNet/seasonal-backupd",
-    "SeasonalNet/seasonal-astrocomd",
-    "SeasonalNet/seasonal-capd",
-    "SeasonalNet/seasonalnet-discord-bot",
-  ],
+  autodiscover: true,
+  autodiscoverNamespaces: ["SeasonalNet"],
+  autodiscoverFilter: ["SeasonalNet/*", "!SeasonalNet/renovate-config"],
 
   onboarding: false,
   requireConfig: "optional",

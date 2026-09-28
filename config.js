@@ -29,7 +29,7 @@ module.exports = {
 
   branchPrefix: "renovate/",
   labels: ["dependencies"],
-  assignees: ["Seasonal_Currency"],
+  assignees: ["seasonal.currency"],
 
   automerge: false,
   platformAutomerge: false,
@@ -61,10 +61,10 @@ module.exports = {
       enabled: false,
     },
     {
-     description: "Do not automatically do major version bumps",
-     matchUpdateTypes: ["major"],
-     dependencyDashboardApproval: true,
-     addLabels: ["major", "needs-approval"],
+      description: "Do not automatically do major version bumps",
+      matchUpdateTypes: ["major"],
+      dependencyDashboardApproval: true,
+      addLabels: ["major", "needs-approval"],
     },
     {
       matchUpdateTypes: ["minor"],
